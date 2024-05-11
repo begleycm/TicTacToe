@@ -29,10 +29,23 @@ void Tictactoe() {
         int row;
         int column;
         cout << "What row and column would you like to play in? " << std::endl;
-        cout << "Row:"; // Add invalid message
-        std::cin >> row;
-        cout << "Column:"; // Add invalid message
-        std::cin >> column;
+
+        bool failing;
+        do {
+            cout << "Row:"; // check
+            std::cin >> row;
+            cout << "Column:"; // check
+            std::cin >> column;
+
+            failing = std::cin.fail();
+            if (failing) {
+                cout << "Invalid input, try again \n";
+            }
+
+            std::cin.clear();
+            std::cin.ignore(INT_MAX, '\n');
+
+        } while(failing);
 
         //Check to see if it is a valid row/column
         if((row < 1 || row > 3) || (column < 1 || column > 3)) {
@@ -120,7 +133,7 @@ int chooseXO() {
         } else if (choice == 'o') {
             return 2;
         } else {
-            cout << "Invalid choice!" << std::endl;
+            cout << "Invalid choice!" << std::endl; // repeats if the user enters more than 1 thing
             choice = XorO();
         }
     }
