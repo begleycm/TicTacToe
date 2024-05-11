@@ -20,7 +20,7 @@ void Tictactoe() {
     cout << "Let's play a game of tic-tac-toe!" << std::endl;
     int currentPlayer = chooseXO(); // 1 for x, 2 for o.
 
-    bool winner = false; // Need to add a check
+    bool winner = false;
     int turns = 0;
     while (turns < 9 && !winner) { // Until there is a winner, or 9 turns are played.
         showBoard(); // Brings up x o board
