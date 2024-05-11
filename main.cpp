@@ -29,9 +29,9 @@ void Tictactoe() {
         int row;
         int column;
         cout << "What row and column would you like to play in? " << std::endl;
-        cout << "Row:";
+        cout << "Row:"; // Add invalid message
         std::cin >> row;
-        cout << "Column:";
+        cout << "Column:"; // Add invalid message
         std::cin >> column;
 
         //Check to see if it is a valid row/column
