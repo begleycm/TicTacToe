@@ -81,6 +81,9 @@ bool isOpen(int slot) {
     return true;
 }
 
+/**
+ * Displays the current Tic-tac-toe board.
+ */
 void showBoard() {
     char xo [3][3];
     for(int i = 0; i < 3; i++) {
