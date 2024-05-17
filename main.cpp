@@ -75,6 +75,11 @@ void Tictactoe() {
     cout << "Would you like to play again? y/n";
     std::cin >> playAgain;
     if (playAgain == 'y' || playAgain == 'Y') {
+        for(auto & i : board) {
+            for(int & j : i) {
+                j = 0;
+            }
+        }
         Tictactoe();
     } else {
         cout << "Thanks for playing!";
