@@ -157,7 +157,8 @@ char XorO() {
 }
 
 /**
- * Checks to see if this number is a winner.
+ * Checks to see if this number is a winner. The first part of the array is the row, second is
+ * the column.
  *
  * @param num Number to look for
  * @return True if there's a winner, false if not.
@@ -176,9 +177,9 @@ bool isWinner(int num) {
         winner = true;
     } else if (board[0][0] == num && board [1][0] == num && board[2][0] == num) { // vertical
         winner = true;
-    } else if (board[1][0] == num && board [1][1] == num && board[1][2] == num) {
+    } else if (board[0][1] == num && board [1][1] == num && board[2][1] == num) {
         winner = true;
-    } else if (board[2][0] == num && board [2][1] == num && board[2][2] == num) {
+    } else if (board[0][2] == num && board [1][2] == num && board[2][2] == num) {
         winner = true;
     }
     return winner;
